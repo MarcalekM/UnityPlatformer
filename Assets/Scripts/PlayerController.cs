@@ -6,15 +6,30 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
     [SerializeField] private float maxSpeed = 7;
+    [SerializeField] private float jumpHeight = 150;
+    [SerializeField] private Transform groundChecker;
+    [SerializeField] private LayerMask groundLayer;
 
     private Animator animator;
     private Rigidbody2D rigidbody2d;
     private bool isFacingRight;
+    private bool isGrounded;
     private void Start()
     {
         animator = GetComponent<Animator>();
         rigidbody2d = GetComponent<Rigidbody2D>();
         isFacingRight = true;
+        isGrounded = false;
+    }
+
+    private void Update()
+    {
+        if(isGrounded && Input.GetAxis("Jump") > 0)
+        {
+            isGrounded = false;
+            animator.SetBool("isGrounded", false);
+            rigidbody2d.AddForce(new(x:0, y:jumpHeight));
+        }
     }
 
     private void FixedUpdate()
@@ -27,6 +42,10 @@ public class NewBehaviourScript : MonoBehaviour
             y: rigidbody2d.velocity.y);
 
         if ((move > 0 && !isFacingRight) || (move < 0 && isFacingRight)) Flip();
+
+        isGrounded = Physics2D.OverlapCircle(groundChecker.position, 0.15f, groundLayer);
+        animator.SetBool("isGrounded", isGrounded);
+        animator.SetFloat("verticalSpeed", rigidbody2d.velocity.y);
     }
 
     private void Flip()
