@@ -10,7 +10,7 @@ public class ProjectileController : MonoBehaviour
     private void Awake()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
-        rigidbody2d.AddForce(new Vector2(1, 0) * projectileSpeed, ForceMode2D.Impulse);
+        rigidbody2d.AddForce(new Vector2(x: transform.rotation.z == 0 ? 1 : -1, 0) * projectileSpeed, ForceMode2D.Impulse);
     }
 
 }

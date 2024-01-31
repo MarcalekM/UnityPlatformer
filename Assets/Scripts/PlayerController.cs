@@ -10,10 +10,16 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] private Transform groundChecker;
     [SerializeField] private LayerMask groundLayer;
 
+    [SerializeField] private Transform gunMuzzle;
+    [SerializeField] private GameObject projectile;
+    [SerializeField] private float fireRate = 0.5f;
+
     private Animator animator;
     private Rigidbody2D rigidbody2d;
     private bool isFacingRight;
     private bool isGrounded;
+    private float nextFire;
+    
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -24,11 +30,19 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void Update()
     {
-        if(isGrounded && Input.GetAxis("Jump") > 0)
+        if (isGrounded && Input.GetAxis("Jump") > 0)
         {
             isGrounded = false;
             animator.SetBool("isGrounded", false);
-            rigidbody2d.AddForce(new(x:0, y:jumpHeight));
+            rigidbody2d.AddForce(new(x: 0, y: jumpHeight));
+
+            nextFire = 0f;
+            if (Time.time >= nextFire && Input.GetAxis("Fire1") != 0)
+            {
+                nextFire = Time.time + fireRate;
+                Instantiate(projectile, gunMuzzle.position, 
+                    Quaternion.Euler(x : 0, y : 0, z : isFacingRight ? 0 : 180));
+            }
         }
     }
 
