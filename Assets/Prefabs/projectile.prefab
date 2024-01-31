@@ -287,7 +287,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4840,6 +4840,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8982493755387186427}
   - component: {fileID: 2638039918707712254}
+  - component: {fileID: 4794457578548501458}
+  - component: {fileID: -2016810336889518206}
   m_Layer: 0
   m_Name: projectile
   m_TagString: Untagged
@@ -4891,6 +4893,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4794457578548501458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7736069212932338056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb69f75ee629c94c9e15f3d6b39f247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpeed: 10
+--- !u!114 &-2016810336889518206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7736069212932338056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1de2b1bdcc8e344826ec102438379a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aliveTime: 3
 --- !u!1 &8978270373526176105
 GameObject:
   m_ObjectHideFlags: 0
