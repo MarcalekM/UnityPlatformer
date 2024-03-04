@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileHit : MonoBehaviour
 {
     [SerializeField] private GameObject explosionEffect;
-    [SerializeField] private float damage;
+    [SerializeField] private float damage = 1f;
 
     private ProjectileController controller;
 
@@ -24,7 +22,8 @@ public class ProjectileHit : MonoBehaviour
 
             if (target.CompareTag("Enemy"))
             {
-                EnemyHealth.
+                EnemyHealth enemyHealth = target.gameObject.GetComponent<EnemyHealth>();
+                enemyHealth.AddDamage(damage);
             }
         }
     }
