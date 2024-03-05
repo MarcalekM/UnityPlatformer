@@ -33,13 +33,13 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = false;
             animator.SetBool("isGrounded", false);
-            rigidbody2d.AddForce(new(x: 0, y: jumpHeight));
+            rigidbody2d.AddForce(new(x:0, y:jumpHeight));
         }
 
         if (Time.time >= nextFire && Input.GetAxisRaw("Fire1") != 0)
         {
             nextFire = Time.time + fireRate;
-            Instantiate(projectile, gunMuzzle.position,
+            Instantiate(projectile, gunMuzzle.position, 
                 Quaternion.Euler(x: 0, y: 0, z: isFacingRight ? 0 : 180));
         }
     }

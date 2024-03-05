@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
@@ -17,7 +15,7 @@ public class CameraFollow : MonoBehaviour
     {
         facingRight = true;
         offset = transform.position - target.position;
-        offset.x += viewDistance / 2;
+        offset.x += viewDistance/2;
         lowY = transform.position.y;
     }
 
@@ -43,4 +41,5 @@ public class CameraFollow : MonoBehaviour
                 transform.position.x, lowY, transform.position.z);
         }
     }
+
 }
