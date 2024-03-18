@@ -6,23 +6,44 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private GameObject bloodDrops;
     [SerializeField] private float maxHealth = 10f;
     [SerializeField] private Slider healthBar;
+    [SerializeField] private Image bloodScreenFX;
+    [SerializeField] private float fadeSmooth = 2f;
     [SerializeField] private AudioClip playerGrunt;
-    private float currentHealt;
+
     private AudioSource audioSource;
+
+    private float currentHealt;
+    private bool getDamage;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        getDamage = false;
         currentHealt = maxHealth;
         healthBar.maxValue = maxHealth;
         healthBar.value = maxHealth;
-        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void Update()
+    {
+        if (getDamage) bloodScreenFX.color = new(255, 255, 255, .8f);
+        else
+        {
+            bloodScreenFX.color = Color.Lerp(
+                bloodScreenFX.color,
+                new(255, 255, 255, 0f),
+                Time.deltaTime * fadeSmooth);
+        }
+        getDamage = false;
     }
 
     public void TakeDamage(float damage)
     {
         currentHealt -= damage;
+        getDamage = true;
         healthBar.value = currentHealt;
-        audioSource.PlayOneShot(playerGrunt);
+        audioSource.PlayOneShot(playerGrunt, .75f);
+
         Instantiate(bloodDrops, transform.position, transform.rotation);
 
         if (currentHealt <= 0)
@@ -34,5 +55,6 @@ public class PlayerHealth : MonoBehaviour
     private void MakeDead()
     {
         Destroy(gameObject);
+        bloodScreenFX.color = new(255, 255, 255, 1f);
     }
 }

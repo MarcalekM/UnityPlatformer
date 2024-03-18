@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4c3a2c5f4856cd64ca28c6ea86af288f
+guid: d6ea92d247941f342aa2058b3c07403b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hedgehog_idle_01
+      name: Idle1
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c75593217e119d40a75253ac5871f50
-      internalID: -1373631264
+      spriteID: 78b640eafc294cf47b536dc7c13b558b
+      internalID: 1824518667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hedgehog_idle_02
+      name: Idle2
       rect:
         serializedVersion: 2
         x: 100
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d3de9fa5a719bf4c987fe838717dfd3
-      internalID: 1947505349
+      spriteID: 9a2c3b852d630bf45bc0c9e5d808d117
+      internalID: -915780133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hedgehog_idle_03
+      name: Idle3
       rect:
         serializedVersion: 2
         x: 200
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 619dd19b9291059459e52f4b0b6deb53
-      internalID: 1702424566
+      spriteID: b2909f76bab78214fb4df1a8357b67c6
+      internalID: 752165596
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hedgehog_idle_04
+      name: Idle4
       rect:
         serializedVersion: 2
         x: 300
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4de777b17f5c024cba25782c6512297
-      internalID: 512740286
+      spriteID: 4e1b79e563703a94d9046346e1a5bcce
+      internalID: -1556244251
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hedgehog_charge_01
+      name: Charge1
       rect:
         serializedVersion: 2
         x: 0
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a47b6bcea2a128c49b56f21d16871bcf
-      internalID: -1600818596
+      spriteID: 7e456397de0d1364bacc717eb1301a62
+      internalID: 739848554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hedgehog_charge_02
+      name: Charge2
       rect:
         serializedVersion: 2
         x: 100
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b70bb6ecdc7f87488b6b7e35052a764
-      internalID: -1039974565
+      spriteID: cbf5cdefae633e54b8c22e30673f8436
+      internalID: 1734916759
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hedgehog_charge_03
+      name: Charge3
       rect:
         serializedVersion: 2
         x: 200
@@ -263,8 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d09edc998c272fb48aef49290cadc2fb
-      internalID: -1893189951
+      spriteID: 20d6769263e26c2428b15dd6c4a2c86d
+      internalID: 1156541930
       vertices: []
       indices: 
       edges: []
@@ -280,13 +280,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hedgehog_charge_01: -1600818596
-      hedgehog_charge_02: -1039974565
-      hedgehog_charge_03: -1893189951
-      hedgehog_idle_01: -1373631264
-      hedgehog_idle_02: 1947505349
-      hedgehog_idle_03: 1702424566
-      hedgehog_idle_04: 512740286
+      Charge1: 739848554
+      Charge2: 1734916759
+      Charge3: 1156541930
+      Idle1: 1824518667
+      Idle2: -915780133
+      Idle3: 752165596
+      Idle4: -1556244251
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

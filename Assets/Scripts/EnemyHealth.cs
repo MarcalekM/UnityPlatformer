@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private float maximumHealth = 5f;
+    [SerializeField] private GameObject destroyFX;
     private float currentHealth;
 
     private void Start()
@@ -19,5 +20,6 @@ public class EnemyHealth : MonoBehaviour
     private void MakeDead()
     {
         Destroy(gameObject);
+        Instantiate(destroyFX, transform.position, transform.rotation);
     }
 }

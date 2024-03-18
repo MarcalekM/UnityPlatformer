@@ -11,12 +11,13 @@ public class ProjectileController : MonoBehaviour
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+
         rigidbody2d.AddForce(new Vector2(transform.rotation.z == 0 ? 1 : -1, 0) * projectileSpeed, ForceMode2D.Impulse);
     }
 
     public void Stop()
     {
-        rigidbody2d.velocity = new(0, 0);
         audioSource.mute = true;
+        rigidbody2d.velocity = new(0, 0);
     }
 }
